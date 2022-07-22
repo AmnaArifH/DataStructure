@@ -8,7 +8,7 @@ class node{
 };
 
 void print(node* n){
-	while(n!=Null){
+	while(n!=NULL){
 		cout<<n->value<<endl;
 		n=n->next;
 	}
@@ -27,7 +27,7 @@ int main()
 	sec->next=third;
 	
 	third->value=3;
-	third->next=Null;
+	third->next=NULL;
 	
 	print(head);
 }
