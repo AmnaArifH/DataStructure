@@ -1,8 +1,9 @@
 #include <iostream>
 using namespace std;
 class Node{
-	public:
+
 	int data;
+		public:
 	Node* next;
 		Node(int data){
 			setdata(data);
@@ -15,7 +16,8 @@ class Node{
 			return data;
 		}
 };
-int get_first_element(Node* head,int n){
+int get_first_element(Node* head){
+	if(head==NULL) return -1;
        return (head->getdata());
 }
 int get_nth_element(Node* head,int n){
@@ -26,12 +28,13 @@ int get_nth_element(Node* head,int n){
 	}	
 	return temp->getdata();
 }
-int get_last_element(Node* head){
+int get_last_element(Node* &head){
+    if(head==NULL) return -1;
 	Node* temp=head;
-	while(temp!=NULL){
+	while(temp->next!=NULL){
 		temp=temp->next;
 	}
-	return temp->getdata();
+	return (temp->getdata());
 }
 int get_length(Node *head){
 	int count=0;
@@ -43,13 +46,15 @@ int get_length(Node *head){
 	return count;
 }
 void display(Node* head){
+	if(head==NULL) return;
 	Node*temp=head;
 	while(temp!=NULL){
 		cout<<temp->getdata()<<"-->";
 		temp=temp->next;
 	}
+	cout<<"NULL"<<endl;
 }
-void insert_in_last(Node *head,int val){
+void insert_in_last(Node* &head,int val){
 	Node* n=new Node(val);
 	if(head==NULL){
 		head=n;
@@ -67,9 +72,8 @@ Node *head=NULL;
 insert_in_last(head,21);
 insert_in_last(head,25);
 insert_in_last(head,23);
-
-get_first_element(head,5);
-get_last_element(head);
 display(head);
+cout<<get_first_element(head)<<endl;
+cout<< get_last_element(head)<<endl;
 return 0;
 }
