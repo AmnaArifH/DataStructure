@@ -41,6 +41,9 @@ class LinkList{
 				Node* n=new Node(val);
 				head=n;
 			}
+			Node* temp=new Node(val);
+			temp->setNext(head);
+			head=temp;
 		}
 		
 		bool removeFromBeginning(){
@@ -52,9 +55,35 @@ class LinkList{
 			head=temp;
 		}
 		
+		bool insertAtLast(int val){
+			if(!isEmpty()){
+				Node* temp=head;
+				while(head!=NULL)
+				{
+					temp=temp->getNext();
+				}
+				Node* n=new Node(val);
+				temp->setNext(n);
+				n->setNext(NULL);
+			}
+		}
 		
+		void display(){
+			if(!isEmpty()){
+				Node* temp=head;
+				while(temp!=NULL){
+					cout<<temp->getData()<<"--->"<<endl;
+					temp=temp->getNext();
+				}
+			}
+		}
 };
 int main()
 {
+	LinkList l1;
+	l1.insertAtBeginning(1);
+	l1.display();
+	l1.insertAtBeginning(2);
+	l1.insertAtBeginning(3);
 	return 0;
 }
