@@ -29,7 +29,7 @@ class Node{
 class LinkList{
 	Node* head;
 	public:
-		bool isEmpty(){
+			bool isEmpty(){
 			if(head==NULL){
 				return true;
 			}
@@ -81,6 +81,7 @@ class LinkList{
 int main()
 {
 	LinkList l1;
+	
 	l1.insertAtBeginning(1);
 	l1.display();
 	l1.insertAtBeginning(2);
