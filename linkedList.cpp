@@ -26,7 +26,7 @@ class Node{
 		}
 		
 };
-class LinkList{
+class LinkedList{
 	Node* head;
 	public:
 			bool isEmpty(){
