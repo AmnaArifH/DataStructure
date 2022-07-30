@@ -37,13 +37,15 @@ class LinkedList{
 		}
 	
 	             int getLength(){
-                         if(isEmpty()) return 0;
+                        if(isEmpty()) return 0;
                         Node * temp=head;
                          int count=0;
                        while(temp!=NULL){
                       temp=temp->getNext();
                       count++;
             }
+            return count;
+        }
             return count;
         }
 		
