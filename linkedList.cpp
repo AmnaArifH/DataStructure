@@ -5,7 +5,7 @@ class Node{
 	Node* next;
 	public:
 		Node(int val){
-			setData(data);
+			setData(val);
 			next=NULL;
 		}
 		
@@ -27,7 +27,7 @@ class Node{
 		
 };
 class LinkedList{
-	Node* head;
+	Node* head=NULL;
 	public:
 			bool isEmpty(){
 			if(head==NULL){
@@ -46,17 +46,32 @@ class LinkedList{
             }
             return count;
         }
-            return count;
-        }
 		
 		bool insertAtBeginning(int val){
 			if(isEmpty()){
 				Node* n=new Node(val);
 				head=n;
+			 // this->head=new Node(val);
+				return true;
 			}
 			Node* temp=new Node(val);
 			temp->setNext(head);
 			head=temp;
+		}
+		
+		int getFirstElement(){
+			if(isEmpty()) return false;
+			return head->getData();
+		}
+		
+		int display(){
+			if(isEmpty()) return 0;
+				Node* temp=head;
+				while(temp!=NULL){
+					cout<<temp->getData()<<"--->";
+					temp=temp->getNext();
+			}
+			cout<<"NULL";
 		}
 		
 		bool removeFromBeginning(){
@@ -67,33 +82,21 @@ class LinkedList{
 			delete head;
 			head=temp;
 		}
-		
-		bool insertAtLast(int val){
-			if(!isEmpty()){
-				Node* temp=head;
-				while(head!=NULL)
-				{
-					temp=temp->getNext();
-				}
-				Node* n=new Node(val);
-				temp->setNext(n);
-				n->setNext(NULL);
-			}
-		}
-		
-		void display(){
-			if(!isEmpty()){
-				Node* temp=head;
-				while(temp!=NULL){
-					cout<<temp->getData()<<"--->"<<endl;
-					temp=temp->getNext();
-				}
-			}
-		}
-};
-int main()
-{LinkedList L1;
+	};
+	int main()
+{
+        LinkedList L1;
            cout<< L1.isEmpty()<<endl;
-           cout<<L1.getLength();
+           cout<<L1.getLength()<<endl;
+           L1.insertAtBeginning(1);
+           L1.insertAtBeginning(2);
+           L1.insertAtBeginning(3);
+           L1.insertAtBeginning(4);
+           L1.display();
+           cout<<endl;
+           cout<<L1.getFirstElement()<<endl;
+           L1.removeFromBeginning();
+           L1.display();
             return 0;
 }
+
