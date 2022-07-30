@@ -35,6 +35,17 @@ class LinkList{
 			}
 			return false;
 		}
+	
+	             int getLength(){
+                         if(isEmpty()) return 0;
+                        Node * temp=head;
+                         int count=0;
+                       while(temp!=NULL){
+                      temp=temp->getNext();
+                      count++;
+            }
+            return count;
+        }
 		
 		bool insertAtBeginning(int val){
 			if(isEmpty()){
@@ -79,12 +90,8 @@ class LinkList{
 		}
 };
 int main()
-{
-	LinkList l1;
-	
-	l1.insertAtBeginning(1);
-	l1.display();
-	l1.insertAtBeginning(2);
-	l1.insertAtBeginning(3);
-	return 0;
+{LinkedList L1;
+           cout<< L1.isEmpty()<<endl;
+           cout<<L1.getLength();
+            return 0;
 }
