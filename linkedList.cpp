@@ -94,6 +94,24 @@ class LinkedList{
 			delete temp2;
 			temp1->setNext(NULL);
 		}
+		
+		int getLastElement(){
+			if(isEmpty()) return false;
+			Node* temp=head;
+			while(temp->getNext()!=NULL){
+				temp=temp->getNext();
+			}
+			return temp->getData();
+		}
+		
+		int getNthElement(int n){
+			if(isEmpty()) return -99;
+			Node* temp=head;
+			for(int i=1;i<n;i++){
+				temp=temp->getNext();
+			}
+			return temp->getData();
+		}
 	};
 	int main()
 {
@@ -104,11 +122,16 @@ class LinkedList{
            L1.insertAtBeginning(2);
            L1.insertAtBeginning(3);
            L1.insertAtBeginning(4);
+           L1.insertAtBeginning(5);
+           L1.insertAtBeginning(6);
+           L1.insertAtBeginning(7);
            L1.display();
            cout<<L1.getFirstElement()<<endl;
            L1.removeFromBeginning();
            L1.display();
            L1.removeFromLast();
            L1.display();
+           cout<<L1.getLastElement()<<endl;
+           cout<<L1.getNthElement(4)<<endl;
             return 0;
 }
