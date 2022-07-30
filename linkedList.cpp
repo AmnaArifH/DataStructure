@@ -64,14 +64,14 @@ class LinkedList{
 			return head->getData();
 		}
 		
-		int display(){
-			if(isEmpty()) return 0;
+		void display(){
+			if(isEmpty()) return ;
 				Node* temp=head;
 				while(temp!=NULL){
 					cout<<temp->getData()<<"--->";
 					temp=temp->getNext();
 			}
-			cout<<"NULL";
+			cout<<"NULL"<<endl;
 		}
 		
 		bool removeFromBeginning(){
@@ -81,6 +81,18 @@ class LinkedList{
 			Node* temp=head->getNext();
 			delete head;
 			head=temp;
+		}
+		
+		bool removeFromLast(){
+			if(isEmpty()) return false;
+			Node *temp1=head;
+			Node* temp2=head->getNext();
+			while(temp2->getNext()!=NULL){
+				temp1=temp1->getNext();
+				temp2=temp2->getNext();
+			}
+			delete temp2;
+			temp1->setNext(NULL);
 		}
 	};
 	int main()
@@ -93,10 +105,10 @@ class LinkedList{
            L1.insertAtBeginning(3);
            L1.insertAtBeginning(4);
            L1.display();
-           cout<<endl;
            cout<<L1.getFirstElement()<<endl;
            L1.removeFromBeginning();
            L1.display();
+           L1.removeFromLast();
+           L1.display();
             return 0;
 }
-
