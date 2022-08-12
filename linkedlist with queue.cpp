@@ -74,10 +74,10 @@ int main()
     q.enqueue(7);
     q.enqueue(9);
 	q.enqueue(11);
-	q.enqueue(13);// where does it go?
+	q.enqueue(13);
     cout<<"AFTER ENQUEUE:";
 	q.display();
-	cout<<"AFTER DEQUEUE:";//why cant i write it as cout<<"after dequeue:"<<q.dequeue;?
+	cout<<"AFTER DEQUEUE:";
     q.dequeue();
 	q.display();
 	 cout<<"AFTER DEQUEUE:";
