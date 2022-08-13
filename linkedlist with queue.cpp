@@ -58,7 +58,7 @@ class queue{
 		void display(){
 			if(isEmpty()) return;
 			node* temp=head;
-			while(temp->getNext()!=NULL){
+			while(temp!=NULL){
 				cout<<temp->getData()<<"-->";
 				temp=temp->getNext();
 			}
@@ -75,9 +75,11 @@ int main()
     q.enqueue(9);
 	q.enqueue(11);
 	q.enqueue(13);
+	q.enqueue(15);// where does it go?
     cout<<"AFTER ENQUEUE:";
 	q.display();
 	cout<<"AFTER DEQUEUE:";
+	//cout<<"after dequeue:"<<q.dequeue();
     q.dequeue();
 	q.display();
 	 cout<<"AFTER DEQUEUE:";
@@ -91,3 +93,4 @@ int main()
     
     return 0;
 }
+
