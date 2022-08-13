@@ -39,10 +39,11 @@ class stack{
 			temp->setNext(n);
 			top=n;
 		}
+		
 		void display(){
 			if(head==NULL) return;
 			node* temp=head;
-			while(temp->getNext()!=NULL){
+			while(temp!=NULL){
 				cout<<temp->getData()<<"-->";
 				temp=temp->getNext();
 			}
