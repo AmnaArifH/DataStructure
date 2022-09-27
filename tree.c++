@@ -33,9 +33,9 @@ class node
 	externalLeaf(root->right);
 }*/
 
-/*(bool isFullParent(node* root){
-	return (root->left!=NULL && root->right!=NULL);
-}*/
+bool isFullParent(node* root){
+	return (root != NULL) ? (root->left!=NULL && root->right!=NULL) : -1;
+}
 
 void preorder(node* root){
 	if(root==NULL) return;
